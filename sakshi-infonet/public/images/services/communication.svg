@@ -1,0 +1,73 @@
+<svg viewBox="0 0 1200 750" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Intercom and telecom communication">
+  <defs>
+    <radialGradient id="cbg" cx="0.5" cy="0.35" r="0.9">
+      <stop offset="0" stop-color="#f3f6fb"/>
+      <stop offset="1" stop-color="#d3ddec"/>
+    </radialGradient>
+    <linearGradient id="cPanel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38538f"/>
+      <stop offset="0.5" stop-color="#22355f"/>
+      <stop offset="1" stop-color="#15254c"/>
+    </linearGradient>
+    <linearGradient id="cInset" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#101f40"/>
+      <stop offset="1" stop-color="#1a2c54"/>
+    </linearGradient>
+    <linearGradient id="cKey" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a63a0"/>
+      <stop offset="1" stop-color="#2a3f6e"/>
+    </linearGradient>
+    <linearGradient id="cHandset" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4a68ad"/>
+      <stop offset="0.5" stop-color="#2c477f"/>
+      <stop offset="1" stop-color="#182a54"/>
+    </linearGradient>
+    <filter id="cShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="20" stdDeviation="20" flood-color="#132043" flood-opacity="0.28"/>
+    </filter>
+    <filter id="cBlur"><feGaussianBlur stdDeviation="16"/></filter>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#cbg)"/>
+  <circle cx="250" cy="205" r="160" fill="#ffffff" opacity="0.35"/>
+  <circle cx="980" cy="560" r="220" fill="#1c2f5c" opacity="0.05"/>
+
+  <ellipse cx="560" cy="650" rx="320" ry="40" fill="#132043" opacity="0.22" filter="url(#cBlur)"/>
+
+  <!-- intercom wall unit -->
+  <g filter="url(#cShadow)" transform="translate(360 165)">
+    <rect x="0" y="0" width="330" height="450" rx="34" fill="url(#cPanel)"/>
+    <rect x="0" y="0" width="120" height="450" rx="34" fill="#ffffff" opacity="0.05"/>
+    <rect x="24" y="26" width="282" height="398" rx="20" fill="url(#cInset)"/>
+    <!-- speaker grille -->
+    <g fill="#3f588f">
+      <circle cx="78" cy="78" r="7"/><circle cx="114" cy="78" r="7"/><circle cx="150" cy="78" r="7"/><circle cx="186" cy="78" r="7"/><circle cx="222" cy="78" r="7"/>
+      <circle cx="78" cy="112" r="7"/><circle cx="114" cy="112" r="7"/><circle cx="150" cy="112" r="7"/><circle cx="186" cy="112" r="7"/><circle cx="222" cy="112" r="7"/>
+    </g>
+    <!-- screen -->
+    <rect x="58" y="152" width="214" height="92" rx="12" fill="#0a1226"/>
+    <rect x="80" y="176" width="120" height="14" rx="7" fill="#8fa0c8" opacity="0.85"/>
+    <rect x="80" y="202" width="82" height="12" rx="6" fill="#c9353d"/>
+    <!-- keypad -->
+    <g fill="url(#cKey)">
+      <rect x="68" y="272" width="52" height="42" rx="10"/><rect x="139" y="272" width="52" height="42" rx="10"/><rect x="210" y="272" width="52" height="42" rx="10"/>
+      <rect x="68" y="328" width="52" height="42" rx="10"/><rect x="139" y="328" width="52" height="42" rx="10"/><rect x="210" y="328" width="52" height="42" rx="10"/>
+    </g>
+    <rect x="68" y="384" width="194" height="34" rx="17" fill="#c9353d"/>
+  </g>
+
+  <!-- handset -->
+  <g filter="url(#cShadow)" transform="rotate(20 830 300)">
+    <rect x="738" y="150" width="76" height="76" rx="28" fill="url(#cHandset)"/>
+    <rect x="738" y="360" width="76" height="76" rx="28" fill="url(#cHandset)"/>
+    <path d="M776 210 q40 92 0 186" fill="none" stroke="url(#cHandset)" stroke-width="46" stroke-linecap="round"/>
+    <ellipse cx="776" cy="176" rx="22" ry="10" fill="#ffffff" opacity="0.2"/>
+  </g>
+
+  <!-- sound waves -->
+  <g fill="none" stroke="#c9353d" stroke-width="10" stroke-linecap="round">
+    <path d="M905 300 a60 60 0 0 1 0 92" opacity="0.95"/>
+    <path d="M950 268 a112 112 0 0 1 0 156" opacity="0.6"/>
+    <path d="M995 236 a164 164 0 0 1 0 220" opacity="0.32"/>
+  </g>
+</svg>

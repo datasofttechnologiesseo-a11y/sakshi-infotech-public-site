@@ -1,0 +1,150 @@
+<svg viewBox="0 0 1200 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Smart security monitoring dashboard">
+  <defs>
+    <linearGradient id="hgPanel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#eef2fa"/>
+    </linearGradient>
+    <linearGradient id="hgNavy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#33508e"/>
+      <stop offset="0.5" stop-color="#22355f"/>
+      <stop offset="1" stop-color="#16244a"/>
+    </linearGradient>
+    <linearGradient id="hgFeed" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#24365f"/>
+      <stop offset="1" stop-color="#0d1832"/>
+    </linearGradient>
+    <linearGradient id="hgCam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#182a54"/>
+      <stop offset="0.42" stop-color="#5c7cbd"/>
+      <stop offset="0.6" stop-color="#33508e"/>
+      <stop offset="1" stop-color="#122043"/>
+    </linearGradient>
+    <radialGradient id="hgLens" cx="0.4" cy="0.38" r="0.75">
+      <stop offset="0" stop-color="#2a3f6e"/>
+      <stop offset="0.55" stop-color="#0f1c3c"/>
+      <stop offset="1" stop-color="#050b1c"/>
+    </radialGradient>
+    <linearGradient id="hgShield" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3a5490"/>
+      <stop offset="1" stop-color="#16244a"/>
+    </linearGradient>
+    <linearGradient id="hgRed" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e14a51"/>
+      <stop offset="1" stop-color="#a5282f"/>
+    </linearGradient>
+    <filter id="hgShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="26" stdDeviation="30" flood-color="#0c1836" flood-opacity="0.28"/>
+    </filter>
+    <filter id="hgShadowS" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#0c1836" flood-opacity="0.32"/>
+    </filter>
+  </defs>
+
+  <!-- main dashboard panel -->
+  <g filter="url(#hgShadow)">
+    <rect x="150" y="150" width="900" height="700" rx="30" fill="url(#hgPanel)"/>
+  </g>
+
+  <!-- top bar -->
+  <g>
+    <circle cx="196" cy="200" r="8" fill="#c9353d"/>
+    <circle cx="222" cy="200" r="8" fill="#e6b45a"/>
+    <circle cx="248" cy="200" r="8" fill="#63c38a"/>
+    <rect x="470" y="188" width="260" height="24" rx="12" fill="#dfe6f3"/>
+    <rect x="520" y="194" width="120" height="12" rx="6" fill="#9fb0d0"/>
+    <circle cx="1000" cy="200" r="16" fill="#eef2fa"/>
+    <path d="M994 200 a6 6 0 0 1 12 0" fill="none" stroke="#8fa0c8" stroke-width="3"/>
+  </g>
+  <line x1="150" y1="238" x2="1050" y2="238" stroke="#e5ebf5" stroke-width="2"/>
+
+  <!-- sidebar -->
+  <rect x="150" y="238" width="130" height="612" fill="#f4f7fc"/>
+  <g fill="#c6d2e6">
+    <rect x="186" y="286" width="58" height="14" rx="7" fill="#c9353d" opacity="0.85"/>
+    <rect x="186" y="330" width="58" height="14" rx="7"/>
+    <rect x="186" y="374" width="58" height="14" rx="7"/>
+    <rect x="186" y="418" width="58" height="14" rx="7"/>
+    <rect x="186" y="462" width="42" height="14" rx="7"/>
+  </g>
+
+  <!-- LIVE label -->
+  <g transform="translate(320 274)">
+    <rect x="0" y="0" width="112" height="34" rx="17" fill="#fbe7e8"/>
+    <circle cx="24" cy="17" r="8" fill="#c9353d"/>
+    <rect x="42" y="10" width="54" height="14" rx="7" fill="#c9353d"/>
+  </g>
+
+  <!-- camera feed grid (2x2) -->
+  <g>
+    <g>
+      <rect x="320" y="326" width="332" height="196" rx="14" fill="url(#hgFeed)"/>
+      <circle cx="486" cy="404" r="34" fill="#3a5490"/>
+      <rect x="452" y="440" width="68" height="46" rx="10" fill="#3a5490"/>
+      <circle cx="622" cy="352" r="7" fill="#c9353d"/>
+    </g>
+    <g>
+      <rect x="676" y="326" width="332" height="196" rx="14" fill="url(#hgFeed)"/>
+      <rect x="726" y="430" width="90" height="60" rx="8" fill="#3a5490"/>
+      <rect x="832" y="404" width="70" height="86" rx="8" fill="#4d67a6"/>
+      <circle cx="978" cy="352" r="7" fill="#c9353d"/>
+    </g>
+    <g>
+      <rect x="320" y="542" width="332" height="180" rx="14" fill="url(#hgFeed)"/>
+      <path d="M360 700 l70 -80 l52 40 l64 -74 l86 114 Z" fill="#33508e"/>
+      <circle cx="470" cy="592" r="24" fill="#5c7cbd"/>
+      <circle cx="622" cy="568" r="7" fill="#c9353d"/>
+    </g>
+    <g>
+      <rect x="676" y="542" width="332" height="180" rx="14" fill="url(#hgFeed)"/>
+      <circle cx="842" cy="620" r="30" fill="#3a5490"/>
+      <rect x="812" y="652" width="60" height="40" rx="9" fill="#3a5490"/>
+      <circle cx="978" cy="568" r="7" fill="#c9353d"/>
+    </g>
+  </g>
+
+  <!-- stat chips bottom -->
+  <g>
+    <rect x="320" y="742" width="216" height="80" rx="14" fill="#eef2fa"/>
+    <rect x="344" y="762" width="80" height="16" rx="8" fill="#c9353d"/>
+    <rect x="344" y="790" width="140" height="12" rx="6" fill="#b9c6de"/>
+    <rect x="560" y="742" width="216" height="80" rx="14" fill="#eef2fa"/>
+    <rect x="584" y="762" width="80" height="16" rx="8" fill="#33508e"/>
+    <rect x="584" y="790" width="140" height="12" rx="6" fill="#b9c6de"/>
+    <rect x="800" y="742" width="208" height="80" rx="14" fill="#eef2fa"/>
+    <rect x="824" y="762" width="80" height="16" rx="8" fill="#33508e"/>
+    <rect x="824" y="790" width="140" height="12" rx="6" fill="#b9c6de"/>
+  </g>
+
+  <!-- floating CCTV camera (top-right) -->
+  <g filter="url(#hgShadowS)" transform="rotate(-12 980 150)">
+    <rect x="880" y="96" width="230" height="92" rx="46" fill="url(#hgCam)"/>
+    <rect x="980" y="74" width="150" height="74" rx="37" fill="#33508e"/>
+    <circle cx="1096" cy="142" r="50" fill="url(#hgRed)"/>
+    <circle cx="1096" cy="142" r="41" fill="url(#hgLens)"/>
+    <circle cx="1080" cy="126" r="9" fill="#ffffff" opacity="0.7"/>
+    <circle cx="912" cy="118" r="9" fill="#c9353d"/>
+  </g>
+  <g fill="none" stroke="#c9353d" stroke-width="7" stroke-linecap="round">
+    <path d="M1150 150 a44 44 0 0 1 0 70" opacity="0.9"/>
+    <path d="M1178 128 a80 80 0 0 1 0 116" opacity="0.5"/>
+  </g>
+
+  <!-- floating shield badge (bottom-left) -->
+  <g filter="url(#hgShadowS)" transform="translate(96 700)">
+    <circle cx="86" cy="86" r="86" fill="#ffffff"/>
+    <g transform="translate(34 30)">
+      <path d="M52 0 L104 22 V60 C104 96 82 120 52 130 C22 120 0 96 0 60 V22 Z" fill="url(#hgShield)"/>
+      <path d="M30 64 l15 15 l29 -34" fill="none" stroke="#ffffff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- floating wifi node (bottom-right) -->
+  <g filter="url(#hgShadowS)" transform="translate(946 726)">
+    <circle cx="70" cy="70" r="70" fill="#ffffff"/>
+    <g fill="none" stroke="#c9353d" stroke-width="9" stroke-linecap="round">
+      <path d="M46 78 a34 34 0 0 1 48 0"/>
+      <path d="M32 62 a54 54 0 0 1 76 0" opacity="0.55"/>
+    </g>
+    <circle cx="70" cy="92" r="9" fill="#22355f"/>
+  </g>
+</svg>

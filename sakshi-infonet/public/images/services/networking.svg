@@ -1,0 +1,86 @@
+<svg viewBox="0 0 1200 750" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Networking, Wi-Fi and internet setup">
+  <defs>
+    <radialGradient id="ntbg" cx="0.5" cy="0.35" r="0.9">
+      <stop offset="0" stop-color="#f3f6fb"/>
+      <stop offset="1" stop-color="#d3ddec"/>
+    </radialGradient>
+    <linearGradient id="ntBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a5490"/>
+      <stop offset="0.5" stop-color="#22355f"/>
+      <stop offset="1" stop-color="#132241"/>
+    </linearGradient>
+    <linearGradient id="ntNode" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3d5896"/>
+      <stop offset="1" stop-color="#1a2c54"/>
+    </linearGradient>
+    <linearGradient id="ntAnt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3f588f"/>
+      <stop offset="1" stop-color="#1e3157"/>
+    </linearGradient>
+    <filter id="ntShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#132043" flood-opacity="0.28"/>
+    </filter>
+    <filter id="ntBlur"><feGaussianBlur stdDeviation="16"/></filter>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#ntbg)"/>
+  <circle cx="255" cy="200" r="160" fill="#ffffff" opacity="0.35"/>
+  <circle cx="980" cy="560" r="220" fill="#1c2f5c" opacity="0.05"/>
+
+  <ellipse cx="600" cy="622" rx="330" ry="40" fill="#132043" opacity="0.22" filter="url(#ntBlur)"/>
+
+  <!-- connection lines -->
+  <g stroke="#2b4076" stroke-width="4" opacity="0.4" stroke-dasharray="2 12" stroke-linecap="round" fill="none">
+    <path d="M600 470 L266 296"/>
+    <path d="M600 470 L940 300"/>
+    <path d="M600 470 L250 566"/>
+    <path d="M600 470 L958 560"/>
+  </g>
+
+  <!-- device nodes -->
+  <g filter="url(#ntShadow)">
+    <g transform="translate(206 246)">
+      <rect x="0" y="0" width="118" height="84" rx="12" fill="url(#ntNode)"/>
+      <rect x="14" y="14" width="90" height="46" rx="6" fill="#0c1730"/>
+      <rect x="36" y="88" width="46" height="10" rx="5" fill="#2b4076"/>
+    </g>
+    <g transform="translate(892 248)">
+      <rect x="0" y="0" width="94" height="68" rx="12" fill="url(#ntNode)"/>
+      <rect x="12" y="12" width="70" height="32" rx="5" fill="#0c1730"/>
+      <circle cx="47" cy="56" r="5" fill="#c9353d"/>
+    </g>
+    <g transform="translate(198 516)">
+      <rect x="0" y="0" width="72" height="104" rx="14" fill="url(#ntNode)"/>
+      <rect x="12" y="14" width="48" height="62" rx="5" fill="#0c1730"/>
+      <circle cx="36" cy="90" r="8" fill="#3f588f"/>
+    </g>
+    <g transform="translate(912 516)">
+      <circle cx="46" cy="46" r="48" fill="url(#ntNode)"/>
+      <path d="M24 46 a22 22 0 0 1 44 0" fill="none" stroke="#c9353d" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="46" cy="46" r="7" fill="#ffffff" opacity="0.85"/>
+    </g>
+  </g>
+
+  <!-- wifi arcs -->
+  <g fill="none" stroke="#c9353d" stroke-width="13" stroke-linecap="round">
+    <path d="M536 300 a94 94 0 0 1 128 0" opacity="0.95"/>
+    <path d="M500 258 a146 146 0 0 1 200 0" opacity="0.6"/>
+    <path d="M464 216 a198 198 0 0 1 272 0" opacity="0.32"/>
+  </g>
+
+  <!-- router -->
+  <g filter="url(#ntShadow)" transform="translate(452 428)">
+    <rect x="68" y="-72" width="15" height="92" rx="7" fill="url(#ntAnt)" transform="rotate(-16 75 -26)"/>
+    <rect x="212" y="-72" width="15" height="92" rx="7" fill="url(#ntAnt)" transform="rotate(16 219 -26)"/>
+    <circle cx="58" cy="-74" r="13" fill="#c9353d"/>
+    <circle cx="240" cy="-74" r="13" fill="#c9353d"/>
+    <rect x="0" y="0" width="296" height="112" rx="28" fill="url(#ntBody)"/>
+    <rect x="0" y="0" width="296" height="40" rx="28" fill="#ffffff" opacity="0.07"/>
+    <rect x="0" y="86" width="296" height="26" rx="13" fill="#132241"/>
+    <circle cx="46" cy="50" r="12" fill="#c9353d"/>
+    <circle cx="42" cy="46" r="4" fill="#ffb0b3"/>
+    <circle cx="90" cy="50" r="12" fill="#7fd6a2"/>
+    <circle cx="134" cy="50" r="12" fill="#3f588f"/>
+    <rect x="188" y="38" width="88" height="24" rx="12" fill="#3f588f" opacity="0.55"/>
+  </g>
+</svg>
