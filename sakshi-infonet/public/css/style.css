@@ -346,27 +346,39 @@ ul { list-style: none; }
     max-width: 620px;
     height: auto;
 }
-.hero-photo {
+/* Hero services collage */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
     width: 100%;
-    max-width: 560px;
-    aspect-ratio: 4 / 3;
-    border-radius: 20px;
+    max-width: 540px;
+}
+.hero-tile {
+    position: relative;
+    display: block;
+    border-radius: 18px;
     overflow: hidden;
+    aspect-ratio: 5 / 4;
     box-shadow: var(--shadow-lg);
     border: 1px solid rgba(255,255,255,0.12);
+    transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+    background: #0e1c40;
 }
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.hero-photo-badge {
-    position: absolute; left: 0; bottom: 24px;
-    display: flex; align-items: center; gap: 11px;
-    background: #fff; border-radius: 14px; padding: 12px 16px;
-    box-shadow: var(--shadow-md);
+.hero-tile:hover { transform: translateY(-5px); }
+.hero-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s var(--ease); }
+.hero-tile:hover img { transform: scale(1.07); }
+.hero-tile-label {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: 26px 14px 13px;
+    display: flex; align-items: center; gap: 9px;
+    color: #fff; font-weight: 700; font-size: 14px; letter-spacing: -0.01em;
+    background: linear-gradient(transparent, rgba(8,15,34,0.9));
 }
-.hero-photo-badge .hpb-ic { width: 38px; height: 38px; border-radius: 10px; background: var(--bg-navy-soft); color: var(--red); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.hero-photo-badge .hpb-ic svg { width: 20px; height: 20px; }
-.hero-photo-badge strong { display: block; color: var(--navy); font-size: 14px; font-weight: 700; line-height: 1.2; }
-.hero-photo-badge small { color: var(--muted); font-size: 12px; }
-@media (max-width: 992px) { .hero-photo-badge { left: 12px; } }
+.hero-tile-ic { width: 24px; height: 24px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: #fff; }
+.hero-tile-ic svg { width: 20px; height: 20px; }
+@media (max-width: 992px) { .hero-grid { max-width: 460px; margin: 0 auto; } }
+@media (max-width: 480px) { .hero-tile-label { font-size: 12.5px; padding: 22px 10px 11px; } }
 
 /* About split illustration */
 .split-illus {

@@ -19,7 +19,7 @@
 @endphp
 <div class="svc-image {{ $imgClass }}">
     @if ($found)
-        <img src="{{ asset($found) }}?v=3" alt="{{ $service['title'] }} services in Faridabad, Delhi NCR - Sakshi Infonet" loading="lazy">
+        <img src="{{ asset($found) }}?v=5" alt="{{ $service['title'] }} services in Faridabad, Delhi NCR - Sakshi Infonet" loading="lazy">
     @else
         <div class="svc-image-fallback">
             <span class="svc-fallback-icon">@include('partials.icon', ['name' => $service['icon']])</span>

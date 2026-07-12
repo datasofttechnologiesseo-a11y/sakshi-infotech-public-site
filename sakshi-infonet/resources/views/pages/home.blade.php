@@ -28,12 +28,16 @@
         </div>
 
         <div class="hero-visual reveal">
-            <div class="hero-photo">
-                <img src="{{ asset('images/hero.jpg') }}?v=1" alt="CCTV security camera installation by Sakshi Infonet in Faridabad, Delhi NCR">
-            </div>
-            <div class="hero-photo-badge">
-                <span class="hpb-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 15l-4-4 1.41-1.41L11 13.17l5.59-5.59L18 9l-7 7z"/></svg></span>
-                <span><strong>Installed &amp; Serviced</strong><small>by our own local team</small></span>
+            <div class="hero-grid">
+                @foreach (config('site.services') as $s)
+                    <a href="{{ route('service.show', $s['slug']) }}" class="hero-tile">
+                        <img src="{{ asset('images/services/'.$s['slug'].'.jpg') }}?v=5" alt="{{ $s['title'] }} in Faridabad, Delhi NCR by Sakshi Infonet">
+                        <span class="hero-tile-label">
+                            <span class="hero-tile-ic">@include('partials.icon', ['name' => $s['icon']])</span>
+                            {{ $s['title'] }}
+                        </span>
+                    </a>
+                @endforeach
             </div>
         </div>
     </div>
