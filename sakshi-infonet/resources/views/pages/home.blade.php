@@ -23,12 +23,18 @@
             <div class="hero-stats">
                 <div class="stat"><strong>20+</strong><span>Years Industry Experience</span></div>
                 <div class="stat"><strong>1000+</strong><span>Happy Customers</span></div>
-                <div class="stat"><strong>24/7</strong><span>Support &amp; Service</span></div>
+                <div class="stat"><strong>6-Day</strong><span>On-Site Support</span></div>
             </div>
         </div>
 
         <div class="hero-visual reveal">
-            <img src="{{ asset('images/hero-tech.svg') }}?v=1" alt="Smart CCTV security monitoring dashboard by Sakshi Infonet" class="hero-illus">
+            <div class="hero-photo">
+                <img src="{{ asset('images/hero.jpg') }}?v=1" alt="CCTV security camera installation by Sakshi Infonet in Faridabad, Delhi NCR">
+            </div>
+            <div class="hero-photo-badge">
+                <span class="hpb-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 15l-4-4 1.41-1.41L11 13.17l5.59-5.59L18 9l-7 7z"/></svg></span>
+                <span><strong>Installed &amp; Serviced</strong><small>by our own local team</small></span>
+            </div>
         </div>
     </div>
 </section>
@@ -39,7 +45,7 @@
         <div class="section-head reveal">
             <span class="eyebrow">What We Do</span>
             <h2>Complete <span class="u">Security &amp; IT</span> Solutions Under One Roof</h2>
-            <p>From CCTV cameras to computer hardware and networking, Sakshi Infonet gives you everything you need to protect and power your business — with quality products and expert installation.</p>
+            <p>From CCTV cameras to computer hardware and networking, Sakshi Infonet gives you everything you need to protect and power your business, with quality products and expert installation.</p>
         </div>
 
         <div class="card-grid">
@@ -64,14 +70,14 @@
         <div class="split">
             <div class="split-media reveal">
                 <div class="split-illus">
-                    <img src="{{ asset('images/about-devices.svg') }}?v=1" alt="Security, IT hardware, communication and networking solutions by Sakshi Infonet">
+                    <img src="{{ asset('images/about.jpg') }}?v=2" alt="The Sakshi Infonet technical team serving homes and businesses in Faridabad, Delhi NCR">
                 </div>
                 <div class="brand-mark">
                     <h3 style="color:#fff;font-size:24px;font-weight:800;margin-bottom:12px;">Your Trusted Technology Partner</h3>
                     <p style="color:#d7def2;font-size:15px;">Your one-stop shop for Security, IT Hardware, Communication and Networking in Delhi NCR.</p>
                 </div>
                 <ul class="trust-list">
-                    <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Genuine, branded products — no local copies</li>
+                    <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Genuine, branded products, no local copies</li>
                     <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Same-day visits across Faridabad &amp; NCR</li>
                     <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Trained technicians, not sub-contractors</li>
                     <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Clear pricing with a written quote</li>
@@ -86,12 +92,12 @@
                 <p style="color:var(--muted);margin-bottom:8px;">
                     Sakshi Infonet is a Faridabad-based company that helps homes, shops, offices and factories stay
                     safe and connected. We supply and install security cameras, biometric machines, computers,
-                    printers, intercom systems and internet networks — all with honest advice and dependable support.
+                    printers, intercom systems and internet networks, all with honest advice and dependable support.
                 </p>
                 <ul class="about-points">
                     <li>
                         <span class="chk"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
-                        <div><strong>End-to-End Service</strong><p>We handle everything — from choosing the right product to installation and after-sales support.</p></div>
+                        <div><strong>End-to-End Service</strong><p>We handle everything, from choosing the right product to installation and after-sales support.</p></div>
                     </li>
                     <li>
                         <span class="chk"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>

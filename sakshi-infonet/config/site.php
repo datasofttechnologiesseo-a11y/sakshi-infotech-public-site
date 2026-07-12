@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| Sakshi Infonet — Central Business Information
+| Sakshi Infonet, Central Business Information
 |--------------------------------------------------------------------------
 | All company details live here so every page, meta tag and schema block
 | stays consistent. Update once, and the whole website reflects it.
@@ -48,7 +48,7 @@ return [
             'title' => 'Security Systems',
             'image' => 'images/services/security-systems.jpg',
             'short' => 'CCTV cameras, biometric attendance and face recognition systems for homes, shops and offices.',
-            'long'  => 'Protect what matters most with Sakshi Infonet\'s complete security systems. We supply and install the latest CCTV cameras, biometric machines and face recognition systems for homes, shops, offices and factories across Faridabad and Delhi NCR. From a single camera at your front gate to a full multi-camera setup with mobile viewing, our trained team plans, installs and maintains everything neatly and professionally. Watch your property live from your phone, record round the clock, and control who enters with smart biometric and access control — all at honest, affordable prices.',
+            'long'  => 'Protect what matters most with Sakshi Infonet\'s complete security systems. We supply and install the latest CCTV cameras, biometric machines and face recognition systems for homes, shops, offices and factories across Faridabad and Delhi NCR. From a single camera at your front gate to a full multi-camera setup with mobile viewing, our trained team plans, installs and maintains everything neatly and professionally. Watch your property live from your phone, record round the clock, and control who enters with smart biometric and access control, all at honest, affordable prices.',
             'items' => [
                 'CCTV Camera Installation (Dome, Bullet, PTZ, IP)',
                 'Biometric Attendance & Access Control',
@@ -80,7 +80,7 @@ return [
             'title' => 'Communication',
             'image' => 'images/services/communication.jpg',
             'short' => 'Intercom, EPABX and telecom solutions for smooth communication in offices and buildings.',
-            'long'  => 'Stay connected across your office or building with smart communication solutions from Sakshi Infonet. We install and maintain intercom systems, EPABX, telecom and public address setups that make internal and external communication simple and clear. Ideal for offices, apartments, factories and commercial complexes, our solutions include neat cabling, easy-to-use handsets and dependable after-sales support — so your teams and visitors can always reach the right person quickly.',
+            'long'  => 'Stay connected across your office or building with smart communication solutions from Sakshi Infonet. We install and maintain intercom systems, EPABX, telecom and public address setups that make internal and external communication simple and clear. Ideal for offices, apartments, factories and commercial complexes, our solutions include neat cabling, easy-to-use handsets and dependable after-sales support, so your teams and visitors can always reach the right person quickly.',
             'items' => [
                 'Intercom & EPABX System Installation',
                 'Telecom & PBX Solutions',

@@ -48,7 +48,7 @@
     </div>
 </section>
 
-{{-- Services grid — each card links to its own detail page --}}
+{{-- Services grid, each card links to its own detail page --}}
 <section style="padding-top:24px;">
     <div class="container">
         <div class="services-overview-grid">

@@ -23,7 +23,7 @@ class PageController extends Controller
     {
         return view('pages.about', [
             'meta' => [
-                'title'       => 'About Us | Sakshi Infonet — Trusted IT & Security Partner in Faridabad',
+                'title'       => 'About Us | Sakshi Infonet - Trusted IT & Security Partner in Faridabad',
                 'description' => 'Learn about Sakshi Infonet, a trusted name in CCTV security, IT hardware, communication and networking solutions in Faridabad, Delhi NCR. Quality products, expert installation and reliable support.',
                 'keywords'    => 'about Sakshi Infonet, CCTV company Faridabad, IT solutions company Delhi NCR, security systems provider Faridabad, networking company NIT Faridabad',
                 'og_type'     => 'website',
@@ -35,7 +35,7 @@ class PageController extends Controller
     {
         return view('pages.services', [
             'meta' => [
-                'title'       => 'Our Services | CCTV, IT Hardware, Communication & Networking — Sakshi Infonet',
+                'title'       => 'Our Services | CCTV, IT Hardware, Communication & Networking - Sakshi Infonet',
                 'description' => 'Explore Sakshi Infonet services: CCTV & biometric security systems, computer hardware & printers, intercom & telecom communication, and internet & networking solutions in Faridabad, Delhi NCR.',
                 'keywords'    => 'CCTV services Faridabad, biometric installation, computer repair Faridabad, printer scanner services, intercom telecom Faridabad, LAN WiFi networking Delhi NCR, IT hardware services',
                 'og_type'     => 'website',
@@ -50,7 +50,13 @@ class PageController extends Controller
 
         abort_if($service === null, 404);
 
-        return view('pages.service-single', [
+        // Each service has its own uniquely designed page; fall back to the shared template.
+        $view = 'pages.services.' . $slug;
+        if (! view()->exists($view)) {
+            $view = 'pages.service-single';
+        }
+
+        return view($view, [
             'service' => $service,
             'others'  => $services->where('slug', '!=', $slug)->values(),
             'meta' => [
@@ -66,7 +72,7 @@ class PageController extends Controller
     {
         return view('pages.contact', [
             'meta' => [
-                'title'       => 'Contact Us | Sakshi Infonet — CCTV & IT Solutions in Faridabad',
+                'title'       => 'Contact Us | Sakshi Infonet - CCTV & IT Solutions in Faridabad',
                 'description' => 'Contact Sakshi Infonet for CCTV, IT hardware, communication and networking solutions in Faridabad, Delhi NCR. Call +91 99104 16354 or email sakshiinfonet@gmail.com for a free quote.',
                 'keywords'    => 'contact Sakshi Infonet, CCTV dealer Faridabad contact, IT hardware shop Faridabad, security system quote Delhi NCR, Sakshi Infonet phone number',
                 'og_type'     => 'website',

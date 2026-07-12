@@ -33,7 +33,7 @@
     <meta property="og:description" content="{{ $description }}">
     <meta property="og:url" content="{{ $canonical }}">
     <meta property="og:image" content="{{ $ogImage }}">
-    <meta property="og:image:alt" content="{{ $siteName }} — Security, IT Hardware, Communication & Networking Solutions">
+    <meta property="og:image:alt" content="{{ $siteName }} - Security, IT Hardware, Communication & Networking Solutions">
     <meta property="og:locale" content="en_IN">
 
     {{-- Twitter Card --}}
@@ -52,7 +52,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}?v=2.1">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}?v=2.4">
 
     {{-- Structured Data: LocalBusiness --}}
     <script type="application/ld+json">
@@ -109,8 +109,26 @@
                     links.classList.toggle('open');
                 });
                 links.querySelectorAll('a').forEach(function (a) {
+                    if (a.classList.contains('nav-drop-toggle')) return;
                     a.addEventListener('click', function () { links.classList.remove('open'); });
                 });
+            }
+
+            // Services dropdown
+            var dropToggle = document.querySelector('.nav-drop-toggle');
+            if (dropToggle) {
+                var navItem = dropToggle.closest('.nav-item');
+                var isMobile = function () { return window.matchMedia('(max-width: 768px)').matches; };
+                // Mobile: tap to expand as an accordion
+                dropToggle.addEventListener('click', function (e) {
+                    if (isMobile()) {
+                        e.preventDefault();
+                        navItem.classList.toggle('open');
+                    }
+                });
+                // Desktop: open on hover (reliable, not purely CSS)
+                navItem.addEventListener('mouseenter', function () { if (!isMobile()) navItem.classList.add('open'); });
+                navItem.addEventListener('mouseleave', function () { if (!isMobile()) navItem.classList.remove('open'); });
             }
 
             // Scroll reveal

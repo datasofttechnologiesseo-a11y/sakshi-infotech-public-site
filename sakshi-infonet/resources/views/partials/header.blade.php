@@ -25,17 +25,53 @@
 <header class="site-header">
     <div class="container header-inner">
         <a href="{{ route('home') }}" class="brand" aria-label="{{ config('site.name') }} Home">
-            <img src="{{ asset(config('site.logo')) }}" alt="{{ config('site.name') }} — Security, IT Hardware, Communication & Networking Solutions">
+            <img src="{{ asset(config('site.logo')) }}" alt="{{ config('site.name') }} - Security, IT Hardware, Communication & Networking Solutions">
         </a>
 
         <button class="nav-toggle" aria-label="Toggle menu">
             <span></span><span></span><span></span>
         </button>
 
+        @php
+            $ddTaglines = [
+                'security-systems'  => 'CCTV, biometric & face recognition',
+                'computer-hardware' => 'Sales, repairs, printers & upgrades',
+                'communication'     => 'Intercom, EPABX & telecom systems',
+                'networking'        => 'LAN, Wi-Fi, internet & cabling',
+            ];
+            $onServices = request()->routeIs('services') || request()->routeIs('service.show');
+        @endphp
         <nav class="nav-links">
             <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a>
             <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">About Us</a>
-            <a href="{{ route('services') }}" class="{{ request()->routeIs('services') ? 'active' : '' }}">Services</a>
+
+            <div class="nav-item has-dropdown">
+                <a href="{{ route('services') }}" class="nav-drop-toggle {{ $onServices ? 'active' : '' }}">
+                    Services
+                    <svg class="nav-caret" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+                </a>
+                <div class="nav-dropdown">
+                    <div class="nav-dropdown-inner">
+                        @foreach (config('site.services') as $s)
+                            <a href="{{ route('service.show', $s['slug']) }}" class="dd-item {{ request()->route('slug') === $s['slug'] ? 'is-active' : '' }}">
+                                <span class="dd-ic">@include('partials.icon', ['name' => $s['icon']])</span>
+                                <span class="dd-text">
+                                    <strong>{{ $s['title'] }}</strong>
+                                    <small>{{ $ddTaglines[$s['slug']] ?? \Illuminate\Support\Str::limit($s['short'], 40) }}</small>
+                                </span>
+                            </a>
+                        @endforeach
+                    </div>
+                    <div class="nav-dropdown-foot">
+                        <a href="{{ route('services') }}" class="dd-all">
+                            View all services
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </a>
+                        <a href="{{ route('contact') }}" class="btn btn-primary dd-cta">Get a Free Quote</a>
+                    </div>
+                </div>
+            </div>
+
             <a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact Us</a>
             <span class="nav-cta">
                 <a href="tel:{{ config('site.phone_link') }}" class="btn btn-navy">Call Now</a>
