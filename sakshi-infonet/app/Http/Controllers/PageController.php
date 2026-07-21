@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\EnquiryReceived;
+use App\Models\Enquiry;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class PageController extends Controller
 {
@@ -96,8 +99,19 @@ class PageController extends Controller
             'message.required' => 'Please tell us how we can help you.',
         ]);
 
-        // Record the enquiry. In production, hook this up to email/CRM.
-        Log::channel('single')->info('New enquiry from website', $validated);
+        // Persist the enquiry first so a lead is never lost, even if mail fails.
+        $enquiry = Enquiry::create($validated + ['ip' => $request->ip()]);
+
+        // Notify the business by email. Wrapped so a mail/SMTP outage never
+        // breaks the visitor's experience — the enquiry is already saved.
+        try {
+            Mail::to(config('site.email'))->send(new EnquiryReceived($enquiry));
+        } catch (\Throwable $e) {
+            Log::error('Enquiry email failed to send', [
+                'enquiry_id' => $enquiry->id,
+                'error'      => $e->getMessage(),
+            ]);
+        }
 
         return redirect()
             ->route('contact')
