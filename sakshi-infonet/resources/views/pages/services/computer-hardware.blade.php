@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="reveal svc-media-card">
-                <img src="{{ asset('images/services/gallery/computer-hardware-1.jpg') }}?v=2" alt="IT hardware and server setup by Sakshi Infonet in Faridabad">
+                <img src="{{ asset('images/services/computer-hardware-banner.jpg') }}?v=6" alt="Computer hardware, laptops, printers and networking devices supplied by Sakshi Infonet in Faridabad">
             </div>
         </div>
     </div>
@@ -58,8 +58,8 @@
         </div>
         <div class="reveal">
             <div class="svc-gallery">
-                <figure class="svc-gallery-item"><img src="{{ asset('images/services/gallery/computer-hardware-2.jpg') }}?v=2" alt="RAM and computer memory upgrades by Sakshi Infonet" loading="lazy"></figure>
-                <figure class="svc-gallery-item"><img src="{{ asset('images/services/gallery/computer-hardware-3.jpg') }}?v=2" alt="Computer components and circuit boards serviced by Sakshi Infonet" loading="lazy"></figure>
+                <figure class="svc-gallery-item"><img src="{{ asset('images/services/gallery/computer-hardware-2.jpg') }}?v=6" alt="Technician repairing a computer circuit board at the Sakshi Infonet workshop in Faridabad" loading="lazy"></figure>
+                <figure class="svc-gallery-item"><img src="{{ asset('images/services/gallery/computer-hardware-3.jpg') }}?v=6" alt="Desktop computers and workstations supplied and set up by Sakshi Infonet in Faridabad, Delhi NCR" loading="lazy"></figure>
             </div>
         </div>
     </div>

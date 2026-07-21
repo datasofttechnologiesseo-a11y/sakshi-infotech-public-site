@@ -24,7 +24,7 @@
             {{-- Info side --}}
             <div class="reveal">
                 <div class="split-illus" style="margin-bottom:20px;box-shadow:var(--shadow-sm);">
-                    <img src="{{ asset('images/contact.jpg') }}?v=1" alt="Sakshi Infonet, CCTV, IT hardware and networking support in Faridabad">
+                    <img src="{{ asset('images/contact.jpg') }}?v=6" alt="Get in touch with the Sakshi Infonet team for CCTV, IT hardware and networking support in Faridabad, Delhi NCR">
                 </div>
                 <div class="info-card">
                     <div class="info-row">

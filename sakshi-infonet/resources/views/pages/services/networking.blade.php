@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="reveal svc-media-card">
-                <img src="{{ asset('images/services/gallery/networking-1.jpg') }}?v=2" alt="Server room and network infrastructure set up by Sakshi Infonet in Faridabad">
+                <img src="{{ asset('images/services/networking-banner.jpg') }}?v=6" alt="Networking, Wi-Fi, routers and structured cabling set up by Sakshi Infonet in Faridabad">
             </div>
         </div>
     </div>

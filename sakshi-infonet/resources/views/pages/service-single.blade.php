@@ -38,7 +38,14 @@
         <div class="service-single">
             {{-- Main content --}}
             <div class="ss-main">
-                @include('partials.service-image', ['service' => $service, 'imgClass' => 'ss-hero-img'])
+                @php $ssBanner = "images/services/{$service['slug']}-banner.jpg"; @endphp
+                @if (file_exists(public_path($ssBanner)))
+                    <div class="ss-banner">
+                        <img src="{{ asset($ssBanner) }}?v=6" alt="{{ $service['title'] }} services in Faridabad &amp; Delhi NCR by Sakshi Infonet">
+                    </div>
+                @else
+                    @include('partials.service-image', ['service' => $service, 'imgClass' => 'ss-hero-img'])
+                @endif
 
                 <span class="eyebrow" style="margin-top:28px;">Our Service</span>
                 <h2 class="ss-title">{{ $service['title'] }} in Faridabad &amp; Delhi NCR</h2>

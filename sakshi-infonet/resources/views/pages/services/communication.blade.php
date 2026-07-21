@@ -23,6 +23,9 @@
             <h2>Keep Everyone Connected, Clearly</h2>
             <p class="svc-lead">{{ $service['long'] }}</p>
         </div>
+        <div class="svc-showcase reveal" style="margin-top:44px;">
+            <img src="{{ asset('images/services/communication-banner.jpg') }}?v=6" alt="Intercom, EPABX, video door phones and office communication systems by Sakshi Infonet in Faridabad">
+        </div>
     </div>
 </section>
 

@@ -21,6 +21,15 @@
     </div>
 </section>
 
+{{-- Branded showcase --}}
+<section style="padding-bottom:0;">
+    <div class="container">
+        <div class="svc-showcase reveal">
+            <img src="{{ asset('images/services/security-systems-banner.jpg') }}?v=6" alt="CCTV cameras, biometric access control and surveillance systems by Sakshi Infonet in Faridabad, Delhi NCR">
+        </div>
+    </div>
+</section>
+
 {{-- Intro + features --}}
 <section>
     <div class="container">

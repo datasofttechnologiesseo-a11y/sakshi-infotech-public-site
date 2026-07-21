@@ -885,6 +885,9 @@ section { padding: 82px 0; }
 /* ---------- Single service page ---------- */
 .service-single { display: grid; grid-template-columns: 1fr 340px; gap: 44px; align-items: start; }
 .ss-main .svc-image.ss-hero-img { aspect-ratio: 16 / 8; box-shadow: var(--shadow-sm); }
+/* Full branded service banner (shown uncropped so baked-in headline stays intact) */
+.ss-banner { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); line-height: 0; }
+.ss-banner img { width: 100%; height: auto; display: block; }
 .ss-title { font-size: clamp(1.5rem, 3vw, 2rem); color: var(--navy); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 14px; line-height: 1.2; }
 .ss-desc { color: var(--muted); font-size: 16px; line-height: 1.8; margin-bottom: 6px; }
 .ss-subhead { font-size: 19px; color: var(--navy); font-weight: 700; margin: 30px 0 16px; font-family: var(--font-head); }
@@ -929,6 +932,10 @@ section { padding: 82px 0; }
 .svc-centered { max-width: 760px; margin: 0 auto; text-align: center; }
 .svc-media-card { border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 4 / 3; }
 .svc-media-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Full branded poster shown uncropped (segments without a hero media slot) */
+.svc-showcase { max-width: 940px; margin: 0 auto; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-lg); line-height: 0; }
+.svc-showcase img { width: 100%; height: auto; display: block; }
 
 /* Full-bleed hero (Security) */
 .svc-hero-full { position: relative; min-height: 480px; display: flex; align-items: center; color: #fff; overflow: hidden; }

@@ -74,7 +74,7 @@
         <div class="split">
             <div class="split-media reveal">
                 <div class="split-illus">
-                    <img src="{{ asset('images/about.jpg') }}?v=2" alt="The Sakshi Infonet technical team serving homes and businesses in Faridabad, Delhi NCR">
+                    <img src="{{ asset('images/expert-team.jpg') }}?v=6" alt="The Sakshi Infonet expert team advising a customer on security and IT solutions in Faridabad, Delhi NCR">
                 </div>
                 <div class="brand-mark">
                     <h3 style="color:#fff;font-size:24px;font-weight:800;margin-bottom:12px;">Your Trusted Technology Partner</h3>
