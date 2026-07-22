@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml
+# Block Laravel internals from crawlers
+Disallow: /storage/
+Disallow: /vendor/
+
+Sitemap: https://sakshiinfonet.com/sitemap.xml

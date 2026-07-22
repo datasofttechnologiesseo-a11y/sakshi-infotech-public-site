@@ -24,6 +24,11 @@
 </script>
 @endpush
 
+@include('partials.schema-breadcrumb', ['crumbs' => [
+    ['name' => 'Home', 'url' => route('home')],
+    ['name' => 'Services', 'url' => route('services')],
+]])
+
 @section('content')
 
 {{-- Banner --}}

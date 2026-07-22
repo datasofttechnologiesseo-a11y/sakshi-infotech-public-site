@@ -12,15 +12,20 @@
         $description = $meta['description'] ?? config('site.short_desc');
         $keywords = $meta['keywords'] ?? '';
         $ogType = $meta['og_type'] ?? 'website';
-        $canonical = url()->current();
-        $ogImage = asset(config('site.logo'));
+        $canonical = $meta['canonical'] ?? url()->current();
+        // Per-page share image (service pages pass their banner); otherwise the branded 1200x630 card.
+        $ogImage  = isset($meta['og_image']) ? asset($meta['og_image']) : asset('images/og-image.jpg').'?v=1';
+        $ogImageW = $meta['og_image_w'] ?? 1200;
+        $ogImageH = $meta['og_image_h'] ?? 630;
+        $mapUrl   = 'https://www.google.com/maps?q=' . urlencode(config('site.map_query'));
     @endphp
 
     <title>{{ $title }}</title>
     <meta name="description" content="{{ $description }}">
     <meta name="keywords" content="{{ $keywords }}">
     <meta name="author" content="{{ $siteName }}">
-    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
     <meta name="language" content="English">
     <meta name="geo.region" content="IN-HR">
     <meta name="geo.placename" content="Faridabad, Delhi NCR">
@@ -33,7 +38,11 @@
     <meta property="og:description" content="{{ $description }}">
     <meta property="og:url" content="{{ $canonical }}">
     <meta property="og:image" content="{{ $ogImage }}">
-    <meta property="og:image:alt" content="{{ $siteName }} - Security, IT Hardware, Communication & Networking Solutions">
+    <meta property="og:image:secure_url" content="{{ $ogImage }}">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="{{ $ogImageW }}">
+    <meta property="og:image:height" content="{{ $ogImageH }}">
+    <meta property="og:image:alt" content="{{ $title }}">
     <meta property="og:locale" content="en_IN">
 
     {{-- Twitter Card --}}
@@ -41,6 +50,7 @@
     <meta name="twitter:title" content="{{ $title }}">
     <meta name="twitter:description" content="{{ $description }}">
     <meta name="twitter:image" content="{{ $ogImage }}">
+    <meta name="twitter:image:alt" content="{{ $title }}">
 
     {{-- Favicon (SI monogram) --}}
     <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}?v=1">
@@ -59,14 +69,18 @@
     {
         "@@context": "https://schema.org",
         "@@type": "LocalBusiness",
+        "@@id": "{{ url('/') }}#business",
         "name": "{{ $siteName }}",
-        "image": "{{ $ogImage }}",
+        "legalName": "{{ $siteName }}",
+        "image": "{{ asset('images/og-image.jpg') }}",
+        "logo": "{{ asset(config('site.logo')) }}",
         "description": "{{ config('site.short_desc') }}",
-        "@@id": "{{ url('/') }}",
         "url": "{{ url('/') }}",
         "telephone": "{{ config('site.phone_link') }}",
         "email": "{{ config('site.email') }}",
         "priceRange": "₹₹",
+        "currenciesAccepted": "INR",
+        "vatID": "{{ config('site.gst') }}",
         "address": {
             "@@type": "PostalAddress",
             "streetAddress": "{{ config('site.address.line') }}",
@@ -75,12 +89,44 @@
             "postalCode": "{{ config('site.address.pincode') }}",
             "addressCountry": "IN"
         },
-        "areaServed": ["Faridabad", "Delhi NCR", "Gurugram", "Delhi", "Noida", "Ballabgarh"],
-        "openingHours": "Mo-Sa 09:30-18:30",
+        "hasMap": "{{ $mapUrl }}",
+        "areaServed": ["Faridabad", "Delhi NCR", "Gurugram", "Delhi", "Noida", "Ballabgarh", "Greater Noida"],
+        "openingHoursSpecification": {
+            "@@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "09:30",
+            "closes": "18:30"
+        },
+        "contactPoint": {
+            "@@type": "ContactPoint",
+            "telephone": "{{ config('site.phone_link') }}",
+            "contactType": "customer service",
+            "areaServed": "IN",
+            "availableLanguage": ["en", "hi"]
+        },
+        "makesOffer": [
+            @foreach (config('site.services') as $svc)
+            { "@@type": "Offer", "itemOffered": { "@@type": "Service", "name": "{{ $svc['title'] }}" } }@if(!$loop->last),@endif
+            @endforeach
+        ],
         "sameAs": [
             "{{ config('site.social.facebook') }}",
-            "{{ config('site.social.instagram') }}"
+            "{{ config('site.social.instagram') }}",
+            "{{ config('site.social.linkedin') }}"
         ]
+    }
+    </script>
+
+    {{-- Structured Data: WebSite --}}
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "WebSite",
+        "@@id": "{{ url('/') }}#website",
+        "name": "{{ $siteName }}",
+        "url": "{{ url('/') }}",
+        "inLanguage": "en-IN",
+        "publisher": { "@@id": "{{ url('/') }}#business" }
     }
     </script>
     @stack('schema')

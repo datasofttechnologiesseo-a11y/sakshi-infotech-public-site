@@ -16,3 +16,9 @@
 }
 </script>
 @endpush
+
+@include('partials.schema-breadcrumb', ['crumbs' => [
+    ['name' => 'Home', 'url' => route('home')],
+    ['name' => 'Services', 'url' => route('services')],
+    ['name' => $service['title'], 'url' => route('service.show', $service['slug'])],
+]])

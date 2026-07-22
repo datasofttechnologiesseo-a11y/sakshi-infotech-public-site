@@ -12,15 +12,17 @@ Route::post('/contact-us', [PageController::class, 'contactSubmit'])->name('cont
 
 // SEO helpers
 Route::get('/sitemap.xml', function () {
+    $lastmod = now()->toDateString();
+
     $urls = [
-        ['loc' => route('home'),     'priority' => '1.0', 'freq' => 'weekly'],
-        ['loc' => route('about'),    'priority' => '0.8', 'freq' => 'monthly'],
-        ['loc' => route('services'), 'priority' => '0.9', 'freq' => 'weekly'],
-        ['loc' => route('contact'),  'priority' => '0.7', 'freq' => 'monthly'],
+        ['loc' => route('home'),     'priority' => '1.0', 'freq' => 'weekly',  'lastmod' => $lastmod],
+        ['loc' => route('about'),    'priority' => '0.8', 'freq' => 'monthly', 'lastmod' => $lastmod],
+        ['loc' => route('services'), 'priority' => '0.9', 'freq' => 'weekly',  'lastmod' => $lastmod],
+        ['loc' => route('contact'),  'priority' => '0.7', 'freq' => 'monthly', 'lastmod' => $lastmod],
     ];
 
     foreach (config('site.services') as $service) {
-        $urls[] = ['loc' => route('service.show', $service['slug']), 'priority' => '0.8', 'freq' => 'monthly'];
+        $urls[] = ['loc' => route('service.show', $service['slug']), 'priority' => '0.8', 'freq' => 'monthly', 'lastmod' => $lastmod];
     }
 
     return response()

@@ -59,6 +59,9 @@ class PageController extends Controller
             $view = 'pages.service-single';
         }
 
+        $banner = "images/services/{$slug}-banner.jpg";
+        $hasBanner = file_exists(public_path($banner));
+
         return view($view, [
             'service' => $service,
             'others'  => $services->where('slug', '!=', $slug)->values(),
@@ -67,6 +70,10 @@ class PageController extends Controller
                 'description' => \Illuminate\Support\Str::limit(strip_tags($service['long']), 155),
                 'keywords'    => $service['title'] . ' Faridabad, ' . $service['title'] . ' Delhi NCR, ' . $service['short'],
                 'og_type'     => 'website',
+                // Use the service's own branded banner as the share image.
+                'og_image'    => $hasBanner ? $banner : null,
+                'og_image_w'  => $hasBanner ? 1280 : null,
+                'og_image_h'  => $hasBanner ? 960 : null,
             ],
         ]);
     }

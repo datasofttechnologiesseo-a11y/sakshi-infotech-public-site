@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@include('partials.schema-breadcrumb', ['crumbs' => [
+    ['name' => 'Home', 'url' => route('home')],
+    ['name' => 'Contact Us', 'url' => route('contact')],
+]])
+
 @section('content')
 
 {{-- Banner --}}
