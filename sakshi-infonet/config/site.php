@@ -34,8 +34,8 @@ return [
 
     'social'      => [
         'facebook'  => 'https://www.facebook.com/',
-        'instagram' => 'https://www.instagram.com/',
-        'linkedin'  => 'https://www.linkedin.com/',
+        'instagram' => 'https://www.instagram.com/sakshiinfonet',
+        'linkedin'  => '',
         'whatsapp'  => 'https://wa.me/919910416354',
     ],
 

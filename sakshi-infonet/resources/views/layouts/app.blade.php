@@ -111,8 +111,7 @@
         ],
         "sameAs": [
             "{{ config('site.social.facebook') }}",
-            "{{ config('site.social.instagram') }}",
-            "{{ config('site.social.linkedin') }}"
+            "{{ config('site.social.instagram') }}"
         ]
     }
     </script>
