@@ -33,7 +33,7 @@ return [
     'hours'       => 'Monday to Saturday: 9:30 AM – 6:30 PM',
 
     'social'      => [
-        'facebook'  => 'https://www.facebook.com/',
+        'facebook'  => 'https://www.facebook.com/share/1D2hfYYFv8/',
         'instagram' => 'https://www.instagram.com/sakshiinfonet',
         'linkedin'  => '',
         'whatsapp'  => 'https://wa.me/919910416354',
