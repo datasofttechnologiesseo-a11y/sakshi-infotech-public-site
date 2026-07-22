@@ -30,7 +30,7 @@ return [
     // Google Maps embed query for the contact page
     'map_query'   => 'Dabua Colony, NIT Faridabad, Haryana 121001',
 
-    'hours'       => 'Monday to Saturday: 9:00 AM – 7:00 PM',
+    'hours'       => 'Monday to Saturday: 9:30 AM – 6:30 PM',
 
     'social'      => [
         'facebook'  => 'https://www.facebook.com/',

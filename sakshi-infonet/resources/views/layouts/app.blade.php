@@ -76,7 +76,7 @@
             "addressCountry": "IN"
         },
         "areaServed": ["Faridabad", "Delhi NCR", "Gurugram", "Delhi", "Noida", "Ballabgarh"],
-        "openingHours": "Mo-Sa 09:00-19:00",
+        "openingHours": "Mo-Sa 09:30-18:30",
         "sameAs": [
             "{{ config('site.social.facebook') }}",
             "{{ config('site.social.instagram') }}"
